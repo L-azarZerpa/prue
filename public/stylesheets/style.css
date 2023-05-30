@@ -259,7 +259,7 @@ body
 }
 
 
-.form-register .botons {
+.form-register .g-recaptcha {
     width: 100%;
     background: #1f53c5;
     border: none;

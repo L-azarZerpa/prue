@@ -52,6 +52,7 @@ router.post('/', async function(req, res, next) {
   let comment = req.body.comment;
   let date = Date();
   let country;
+  let ip;
   try {
     const response = await fetch('https://api.ipify.org/?format=json');
     const data = await response.json();
