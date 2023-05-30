@@ -3,6 +3,7 @@ const db = require('../database');
 var router = express.Router();
 const fetch = require('node-fetch');
 const nodemailer = require('nodemailer');
+var request = require('request');
 
 
 router.get('/', function(req, res, next) {

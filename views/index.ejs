@@ -4,6 +4,11 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+      function onSubmit(token) {
+        document.getElementById("contact-form").submit();
+      }
+    </script>
     
   </head>
   <body>
@@ -132,8 +137,7 @@
         <p>estoy de acuerdo con <a href="#">terminos y condiciones</a></p>
 
 
-        <div class="g-recaptcha" data-sitekey="6Lf6DEcmAAAAAFbbx_KabhiiiumN2R14Fah6sLgR"></div>
-        <input class="botons" type="submit" >
+        <button class="g-recaptcha" data-sitekey="6LesI0smAAAAAIADyZH7fHsvZivNbLLahGCdljSp" data-callback="onSubmit">enviar</button>
         <p><a href="#">politica de privacidad</a></p>
     </section>  
     </form>
