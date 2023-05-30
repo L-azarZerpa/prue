@@ -202,7 +202,7 @@ body
     flex-direction: column;
 }
 
-.g-recaptcha{
+.boton{
     margin-top: 20px;
     width: 200px;
     height: 60px;
@@ -259,7 +259,7 @@ body
 }
 
 
-.form-register .g-recaptcha {
+.form-register .g-recaptcha{
     width: 100%;
     background: #1f53c5;
     border: none;

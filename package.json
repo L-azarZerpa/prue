@@ -17,5 +17,8 @@
     "nodemailer": "^6.9.2",
     "request": "^2.88.2",
     "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }
