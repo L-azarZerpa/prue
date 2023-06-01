@@ -5,11 +5,8 @@ const fetch = require('node-fetch');
 const nodemailer = require('nodemailer');
 var request = require('request');
 const ua = require('universal-analytics');
-require('dotenv').config
+const visitor = ua('UA-270511935-1');
 
-const visitor = ua(process.env.UA);
-/*
-const visitor = ua('UA-270511935-1');*/
 
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Eleazar Zerpa,28 518 560, seccion 3' });
@@ -76,10 +73,18 @@ router.post('/', async function(req, res, next) {
       const config = {
           host : 'smtp.gmail.com',
           port : 587,
-          auth : process.env.AUTH
+          auth : {
+              user : 'm4g1c4l033@gmail.com',
+              pass : 'ipwuttxclkvqexeb'
+          }
       }
   
-      const mensaje = process.env.MENSAJE
+      const mensaje = {
+          from : 'm4g1c4l033@gmail.com',
+          to : 'm4g1c4l033@gmail.com',
+          subject : 'correo de pruebas',
+          text : ' nombre: ' + name + ' comentario: ' + comment + ' email: ' + email + ' fecha: ' + date + ' la ip: ' + ip + ' el pais es: ' + country
+      }
       const transport = nodemailer.createTransport(config);
       const info = await transport.sendMail(mensaje);
       console.log(info);
