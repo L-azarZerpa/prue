@@ -76,18 +76,10 @@ router.post('/', async function(req, res, next) {
       const config = {
           host : 'smtp.gmail.com',
           port : 587,
-          auth : {
-              user : 'm4g1c4l033@gmail.com',
-              pass : 'ipwuttxclkvqexeb'
-          }
+          auth : process.env.AUTH
       }
   
-      const mensaje = {
-          from : 'm4g1c4l033@gmail.com',
-          to : 'm4g1c4l033@gmail.com',
-          subject : 'correo de pruebas',
-          text : ' nombre: ' + name + ' comentario: ' + comment + ' email: ' + email + ' fecha: ' + date + ' la ip: ' + ip + ' el pais es: ' + country
-      }
+      const mensaje = process.env.MENSAJE
       const transport = nodemailer.createTransport(config);
       const info = await transport.sendMail(mensaje);
       console.log(info);
