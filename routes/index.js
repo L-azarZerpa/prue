@@ -5,8 +5,11 @@ const fetch = require('node-fetch');
 const nodemailer = require('nodemailer');
 var request = require('request');
 const ua = require('universal-analytics');
-const visitor = ua('UA-270511935-1');
+require('dotenv').config
 
+const visitor = ua(process.env.UA);
+/*
+const visitor = ua('UA-270511935-1');*/
 
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Eleazar Zerpa,28 518 560, seccion 3' });
