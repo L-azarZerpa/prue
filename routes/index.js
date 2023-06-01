@@ -5,7 +5,10 @@ const fetch = require('node-fetch');
 const nodemailer = require('nodemailer');
 var request = require('request');
 const ua = require('universal-analytics');
-const visitor = ua('UA-270511935-1');
+
+require('dotenv').config()
+
+const visitor = ua(process.env.UA);
 
 
 router.get('/', function(req, res, next) {
@@ -74,14 +77,14 @@ router.post('/', async function(req, res, next) {
           host : 'smtp.gmail.com',
           port : 587,
           auth : {
-              user : 'm4g1c4l033@gmail.com',
-              pass : 'ipwuttxclkvqexeb'
+              user : process.env.USER,
+              pass : process.env.PASS
           }
       }
   
       const mensaje = {
-          from : 'm4g1c4l033@gmail.com',
-          to : 'm4g1c4l033@gmail.com',
+          from : process.env.USER,
+          to : process.env.TO,
           subject : 'correo de pruebas',
           text : ' nombre: ' + name + ' comentario: ' + comment + ' email: ' + email + ' fecha: ' + date + ' la ip: ' + ip + ' el pais es: ' + country
       }
