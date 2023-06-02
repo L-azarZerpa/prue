@@ -78,9 +78,11 @@ router.post('/', async function(req, res, next) {
           port : 587,
           auth : {
               user : process.env.USER,
+    
               pass : process.env.PASS
           }
       }
+      console.log(config.auth.user);
   
       const mensaje = {
           from : process.env.USER,
