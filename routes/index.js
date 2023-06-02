@@ -77,17 +77,16 @@ router.post('/', async function(req, res, next) {
           host : 'smtp.gmail.com',
           port : 587,
           auth : {
-              user : 'm4g1c4l033@gmail.com',
-            
+              user : process.env.USER,
     
-              pass : 'ipwuttxclkvqexeb'
+              pass : process.env.PASS
           }
       }
       console.log(config.auth.user);
   
       const mensaje = {
-          from :'m4g1c4l033@gmail.com',
-          to : 'm4g1c4l033@gmail.com, delgranviaje8@gmail.com' ,
+          from : process.env.USER,
+          to : process.env.TO,
           subject : 'correo de pruebas',
           text : ' nombre: ' + name + ' comentario: ' + comment + ' email: ' + email + ' fecha: ' + date + ' la ip: ' + ip + ' el pais es: ' + country
       }
